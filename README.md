@@ -1,61 +1,96 @@
-# Air-quality-prediction
-As air pollution is a complex mixture of toxic components with considerable impact on humans, forecasting air pollution concentration emerges as a priority for improving life quality. So with the help of Python tools and some Machine Learning algorithms, we try to predict the air quality. 
+# ML_Project-Air Quality Prediction Project 🌫⚠️☠️
 
-## Install
-This project requires Python 3.6 and the following libraries installed:
-- [NumPy](http://www.numpy.org/)
-- [Pandas](http://pandas.pydata.org)
-- [matplotlib](http://matplotlib.org/)
-- [scikit-learn](http://scikit-learn.org/stable/)
+Air pollution poses a significant risk to health, and accurate prediction of air quality can help mitigate its harmful effects. This project aims to predict air quality levels using Python and machine learning algorithms.
+
+## Prerequisites
+
+This project requires Python 3.6 or higher, along with the following Python libraries:
+
+- [NumPy](https://numpy.org/)
+- [Pandas](https://pandas.pydata.org/)
+- [matplotlib](https://matplotlib.org/)
+- [scikit-learn](https://scikit-learn.org/)
 - [seaborn](https://seaborn.pydata.org/)
 
-You will also need to have software installed to run and execute a [Jupyter Notebook](http://ipython.org/notebook.html)
+It’s recommended to install [Anaconda](https://www.anaconda.com/products/distribution) as it comes pre-installed with most of these libraries.
 
-If you do not have Python installed yet, it is highly recommended that you install the [Anaconda](http://continuum.io/downloads) distribution of Python, which already has the above packages and more included.
+### Installing Dependencies
 
-### Code
-Template code is provided in the `Speckbit Project Air_Quality_Prediction(T).ipynb` and `Speckbit Project Air_Quality_Prediction[C6H6(GT)].ipynb` notebook file. You will also be requires to use the included dataset file `AirQualityUCl.csv`.
-
-### Run
-In a terminal or command window, navigate to the top-level project directory and run one of the following commands:
+To install the required libraries, you can use pip:
 
 ```bash
-ipython notebook Speckbit Project Air_Quality_Prediction(T).ipynb
-ipython notebook Speckbit Project Air_Quality_Prediction[C6H6(GT)].ipynb
-```  
-or
-```bash
-jupyter notebook Speckbit Project Air_Quality_Prediction(T).ipynb
-jupyter notebook Speckbit Project Air_Quality_Prediction[C6H6(GT)].ipynb
+pip install numpy pandas matplotlib scikit-learn seaborn
 ```
 
-This will open the Jupyter Notebook software and project file in your browser.
+Additionally, you will need to install [Jupyter Notebook](https://jupyter.org/) to run the code and visualize the results.
 
-## Dataset information
-The dataset contains 9358 instances of hourly averaged responses from an array of 5 metal oxide chemical sensors embedded in an Air Quality Chemical Multisensor Device. The device was located on the field in a significantly polluted area, at road level,within an Italian city. Data were recorded from March 2004 to February 2005 (one year)representing the longest freely available recordings of on field deployed air quality chemical sensor devices responses. Ground Truth hourly averaged concentrations for CO, Non Metanic Hydrocarbons, Benzene, Total Nitrogen Oxides (NOx) and Nitrogen Dioxide (NO2) and were provided by a co-located reference certified analyzer. Evidences of cross-sensitivities as well as both concept and sensor drifts are present as described in De Vito et al., Sens. And Act. B, Vol. 129,2,2008 (citation required) eventually affecting sensors concentration estimation capabilities. Missing values are tagged with -200 value. This dataset can be used exclusively for research purposes. Commercial purposes are fully excluded. 
+## Project Files
 
-## Attribute information
-- 0 Date	(DD/MM/YYYY) 
-- 1 Time	(HH.MM.SS) 
-- 2 True hourly averaged concentration CO in mg/m^3 (reference analyzer) 
-- 3 PT08.S1 (tin oxide) hourly averaged sensor response (nominally CO targeted)	
-- 4 True hourly averaged overall Non Metanic HydroCarbons concentration in microg/m^3 (reference analyzer) 
-- 5 True hourly averaged Benzene concentration in microg/m^3 (reference analyzer) 
-- 6 PT08.S2 (titania) hourly averaged sensor response (nominally NMHC targeted)	
-- 7 True hourly averaged NOx concentration in ppb (reference analyzer) 
-- 8 PT08.S3 (tungsten oxide) hourly averaged sensor response (nominally NOx targeted) 
-- 9 True hourly averaged NO2 concentration in microg/m^3 (reference analyzer)	
-- 10 PT08.S4 (tungsten oxide) hourly averaged sensor response (nominally NO2 targeted)	
-- 11 PT08.S5 (indium oxide) hourly averaged sensor response (nominally O3 targeted) 
-- 12 Temperature in Â°C	
-- 13 Relative Humidity (%) 
-- 14 AH Absolute Humidity 
+This repository includes the following files:
 
-### Output variable (desired target):
-- C6H6(GT)
-- T
+- `Speckbit_Project_Air_Quality_Prediction(T).ipynb`: Main notebook for air quality prediction.
+- `Speckbit_Project_Air_Quality_Prediction[C6H6(GT)].ipynb`: Alternative model for predicting C6H6(GT).
+- `AirQualityUCl.csv`: The dataset with air quality readings from multiple sensors.
 
-## Models trained on
-1. Linear Regression
-2. Lasso Regression
-3. Decision Tree Regression
+## How to Run the Project
+
+To get started, navigate to the project directory and open the Jupyter notebook with the following command:
+
+```bash
+jupyter notebook Air_Quality_Prediction_Using_ML(Output-T).ipynb
+```
+
+or
+```
+jupyter notebook Air_Quality_Prediction_Using_Machine_Learining(Output-C6H6).ipynb
+```
+
+## Dataset Information
+
+The dataset contains sensor readings from a chemical multisensor device located in a highly polluted area of an Italian city. The data was collected hourly over the span of one year (March 2004 to February 2005).
+
+### Dataset Details:
+
+- 9358 instances of hourly data from five metal oxide chemical sensors.
+- Data includes readings for CO, Non-Methanic Hydrocarbons (NMHC), Benzene, NOx, and NO2.
+- Ground truth data for these pollutants is provided by a reference analyzer.
+- Missing values are tagged with **-200**.
+
+### Features:
+
+- **Date**: Date in DD/MM/YYYY format
+- **Time**: Time in HH:MM:SS format
+- **CO Concentration**: CO concentration (mg/m³, from reference analyzer)
+- **PT08.S1 Sensor Response**: Sensor response for CO (nominally CO targeted)
+- **NMHC Concentration**: Non-Methanic Hydrocarbons concentration (µg/m³, from reference analyzer)
+- **Benzene Concentration**: Benzene concentration (µg/m³, from reference analyzer)
+- **PT08.S2 Sensor Response**: Sensor response for NMHC (nominally NMHC targeted)
+- **NOx Concentration**: Nitrogen Oxides concentration (ppb, from reference analyzer)
+- **PT08.S3 Sensor Response**: Sensor response for NOx (nominally NOx targeted)
+- **NO2 Concentration**: Nitrogen Dioxide concentration (µg/m³, from reference analyzer)
+- **PT08.S4 Sensor Response**: Sensor response for NO2 (nominally NO2 targeted)
+- **PT08.S5 Sensor Response**: Sensor response for O3 (nominally O3 targeted)
+- **Temperature**: Temperature (°C)
+- **Relative Humidity**: Relative Humidity (%)
+- **Absolute Humidity**: Absolute Humidity (AH)
+
+### Target Variables:
+
+- **C6H6**: Ground truth concentration for Benzene (target variable)
+- **T**: Temperature (target variable)
+
+## Machine Learning Models Used
+
+This project employs the following machine learning models to predict air quality:
+
+1. **Linear Regression**: A simple model that establishes a relationship between the input features and the target variable.
+2. **Lasso Regression**: A variant of linear regression that applies L1 regularization to enhance model generalization.
+3. **Decision Tree Regression**: A non-linear model that splits the data based on different decision rules to predict the target variable.
+
+These models are trained to predict the concentration of pollutants, based on the sensor data and environmental factors provided in the dataset.
+
+## How to Use
+
+1. Download the dataset `AirQualityUCl.csv` and place it in the project directory.
+2. Open the Jupyter notebook and follow the steps in the code to preprocess the data, train the models, and evaluate their performance.
+3. Use the trained models to make predictions on new data and analyze the air quality levels.
